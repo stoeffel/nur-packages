@@ -4,7 +4,7 @@ sudo: false
 
 env:
   global:
-    - CACHIX_CACHE=stoeffel.cachix.org
+    - CACHIX_CACHE=stoeffel
     - NUR_REPO=nur-packages
 
 matrix:
