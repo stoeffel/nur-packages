@@ -19,6 +19,4 @@ in {
   hindent-imposter =
     pkgs.callPackage ./pkgs/ormolu/hindent-imposter.nix { inherit ormolu; };
   vimPlugins = pkgs.callPackage ./pkgs/vimPlugins { };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
 }
