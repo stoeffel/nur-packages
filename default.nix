@@ -7,13 +7,17 @@
 #     nix-build -A mypackage
 
 { pkgs ? import <nixpkgs> { } }:
+let
 
-{
+  ormolu = pkgs.callPackage ./pkgs/ormolu { };
+in {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
-
+  inherit ormolu;
+  hindent-imposter =
+    pkgs.callPackage ./pkgs/ormolu/hindent-imposter.nix { inherit ormolu; };
   vimPlugins = pkgs.callPackage ./pkgs/vimPlugins { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
