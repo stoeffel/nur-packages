@@ -20,4 +20,5 @@ in {
     pkgs.callPackage ./pkgs/ormolu/hindent-imposter.nix { inherit ormolu; };
   vimPlugins = pkgs.callPackage ./pkgs/vimPlugins { };
   agda-stdlib = pkgs.callPackage ./pkgs/agda-stdlib { };
+  kak-plug = pkgs.callPackage ./pkgs/kak-plug { };
 }
